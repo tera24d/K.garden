@@ -17,6 +17,7 @@
 - has_many :room_users
 - has_many :rooms, through: room_users
 - has_many :events
+- has_many :messages
 
 ## events テーブル
 
@@ -59,10 +60,10 @@
 
 ## room_users テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user_id | references | null: false, foreign_key: true |
+| room_id | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -73,9 +74,9 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| content | string     |                                |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+| content | text       |                                |
+| user_id | references | null: false, foreign_key: true |
+| room_id | references | null: false, foreign_key: true |
 
 ### Association
 
